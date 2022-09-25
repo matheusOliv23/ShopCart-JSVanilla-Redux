@@ -1,3 +1,15 @@
+.lista_produtos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.lista_items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .carrinho {
     position: fixed;
     top: 0;
@@ -7,6 +19,7 @@
     padding: 20px;
     background-color: aqua;
     box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+    display: flex;
     flex-direction: column;
 }
 
@@ -15,4 +28,18 @@
     font-size: 1.5rem;
     font-weight: 600;
     margin-top: 2rem;
+}
+
+.carrinho_box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.carrinho_img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    padding: 10px;
 }

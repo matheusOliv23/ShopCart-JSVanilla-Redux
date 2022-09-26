@@ -21,7 +21,7 @@ function addItem(produto) {
     }
 }
 
-function removeItem(produto) {
+function removeItem(produtoId) {
     return {
         type: 'REMOVER_ITEM',
         payload: {
@@ -50,6 +50,9 @@ function reducer(state = {}, action) {
             } : Object.keys(state).reduce(function(acumulador, produtoId) {
                 return {
                     ...acumulador,
+                    ...(produtoId === action.payload.id) ? {} : {
+                        [produtoId]: state[produtoId]
+                    }
 
                 }
             }, {})

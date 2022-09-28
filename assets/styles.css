@@ -1,13 +1,36 @@
+body {
+    background-color: #F6F8FA;
+}
+
 .lista_produtos {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    padding: 50px;
 }
 
 .lista_items {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.card_produto {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    box-shadow: 5px 10px #888888;
+}
+
+nav i {
+    font-size: 30px;
+    cursor: pointer;
 }
 
 .carrinho {
@@ -21,6 +44,7 @@
     box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
     display: flex;
     flex-direction: column;
+    display: none;
 }
 
 .carrinho_titulo {
@@ -42,4 +66,22 @@
     height: 120px;
     object-fit: contain;
     padding: 10px;
+}
+
+.price_icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price_icon i {
+    cursor: pointer;
+}
+
+.price_icon span {
+    color: green
+}
+
+.icon {
+    padding: 8px;
 }

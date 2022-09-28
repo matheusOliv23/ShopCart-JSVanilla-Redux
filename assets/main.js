@@ -29,8 +29,15 @@ function removeItem(produtoId) {
         }
     }
 }
+
+const abrirMenu = {
+    type: 'ABRIR_MENU',
+    menuAberto: true
+}
+
 //estado inicial
 function reducer(state = {}, action) {
+
     switch (action.type) {
         case 'ADICIONA_ITEM':
             return {
@@ -56,6 +63,11 @@ function reducer(state = {}, action) {
 
                 }
             }, {})
+        case 'ABRIR_MENU':
+            return {
+                ...state,
+                menuAberto: true
+            }
         default:
             return state
     }
@@ -78,7 +90,7 @@ function renderizaProduto(produto, index) {
            <h5 class="card-title">${produto.name}</h5>
            <p class="card-text">${produto.price}</p>
            <p>${produto.rating}</p> 
-           <p> Frete grátis </p> 
+           <p> Frete grátisss </p> 
            <button data-index="${index}" href="#" class="btn btn-primary btn-add">Adicionar ao carrinho</button>
          </div>
       </div>
@@ -146,6 +158,7 @@ document.body.addEventListener("click", function(event) {
         const index = parseInt(elemento.getAttribute("data-index"));
         const produto = products[index];
         store.dispatch(addItem(produto))
+
     }
 
     if (elemento.classList.contains('btn-remove')) {
@@ -153,7 +166,7 @@ document.body.addEventListener("click", function(event) {
         store.dispatch(removeItem(produtoId))
     }
 });
-document.querySelector(".lista_produtos").innerHTML = renderizaTodosProdutos();
+//document.querySelector(".lista_produtos").innerHTML = renderizaTodosProdutos();
 
-renderizaTodosProdutos();
-carrinhoValorTotal()
+//renderizaTodosProdutos();
+//carrinhoValorTotal()

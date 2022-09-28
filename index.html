@@ -5,14 +5,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/941e120c9d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/styles.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <title>Carrinho Redux</title>
 </head>
 
 <body>
+    <nav>
+        <h2>Carrinho Redux</h2>
+        <i class="fa fa-sharp fa-solid fa-cart-plus icon"></i>
+    </nav>
+
     <div class="carrinho">
+
         <div class="carrinho_titulo"> Meu carrinho </div>
+        <i class="fas fa-band-aid"></i>
         <div class="lista_items">
 
 
@@ -20,12 +28,31 @@
         <div class="total">
 
         </div>
+        <i data-feather="circle"></i>
+    </div>
+    <div class="lista_produtos">
+        <div class="card text-center card_produto" style="width: 18rem;">
+            <img src="http://placeimg.com/640/480/arch" class="card-img-top" alt="Imagem aleatória" />
+            <div class="card-body">
+                <h5 class="card-title text-center fs-5">produto.name</h5>
+                <div class="price_icon ">
+                    <p class="card-text fs-2">R$ 20</p>
+                    <i class="fa-light fa-bolt-lightning"></i>
+                    <span style="font-weight:bold;">
+                        Frete grátis
+                    </span>
+                </div>
+                <button type="button" style="background-color: orange ;" class="btn  btn-lg btn-add">
+                    <i class="fa fa-sharp fa-solid fa-cart-plus icon"></i>
+                    Comprar
+                </button>
+            </div>
+        </div>
     </div>
 
-    <div class="lista_produtos"></div>
-
-    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
-    <script src="./assets/main.js"></script>
+    <!-- choose one -->
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js "></script>
+    <script src="./assets/main.js "></script>
 
 </body>
 

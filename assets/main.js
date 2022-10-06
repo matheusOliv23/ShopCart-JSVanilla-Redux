@@ -84,34 +84,46 @@ store.subscribe(function() {
 function renderizaProduto(produto, index) {
     //prettier-ignore
     return `     
-      <div class="card" style="width: 18rem;" >
-        <img src="http://placeimg.com/640/480/arch" class="card-img-top" alt="Imagem aleatória" />
-        <div class="card-body">
-           <h5 class="card-title">${produto.name}</h5>
-           <p class="card-text">${produto.price}</p>
-           <p>${produto.rating}</p> 
-           <p> Frete grátisss </p> 
-           <button data-index="${index}" href="#" class="btn btn-primary btn-add">Adicionar ao carrinho</button>
-         </div>
-      </div>
+    <div class="card text-center card_produto" style="width: 18rem;">
+            <img src="http://placeimg.com/640/480/arch" class="card-img-top" alt="Imagem aleatória" />
+            <div class="card-body">
+                <h5 class="card-title text-center fs-5">${produto.name}</h5>
+                <div class="price_icon ">
+                    <p class="card-text fs-2">R$${produto.price}</p>
+                    <i class="fa-light fa-bolt-lightning"></i>
+                    <span style="font-weight:bold;">
+                        Frete grátis
+                    </span>
+                </div>
+                <button type="button" data-index=${index} style="background-color: orange ;" class="btn  btn-lg btn-add">
+                    <i class="fa fa-sharp fa-solid fa-cart-plus icon"></i>
+                    Comprar
+                </button>
+            </div>
+    </div>
   `
 }
 
 function renderizaItem(produto) {
     return `     
-      <div class="card" style="width: 100%;">
-             <div class="carrinho_box">
+     <div class="card" style="width: 100%;">
+                <div class="carrinho_box">
                     <img class="carrinho_img" src="http://placeimg.com/640/480/arch" alt="Imagem aleatoria">
                     <div class="carrinho_detalhes">
-                        <div class="carrinho_produto-titulo">${produto.name}</div>
-                        <div class="carrinho_produto-preco">R$${produto.price}</div>
-                        <div class="carrinho_qtd-item">Qtd: ${produto.quantidade}</div>
-                        <div class="carrinho_preco-total-item">Total: ${produto.price * produto.quantidade}</div>
-                        <input class="btn btn-primary" type="button" value="Adicionar">
+                        <div class="carrinho_produto-titulo">nome</div>
+                        <div class="carrinho_produto-preco">R$ 20</div>
+                        <div class="carrinho_preco-total-item">Total: 20</div>
+                        <div class="carrinho_icons">
+                            <i class="fa fa-light fa-minus"></i>
+                            <div class="carrinho_qtd-item">2</div>
+                            <i class="fa fa-light fa-plus"></i>
+                        </div>
+                        <!-- <input class="btn btn-primary" type="button" value="Adicionar"> -->
                     </div>
-                    <input data-produto-id="${produto.id}" class="btn btn-danger btn-sm btn-remove" type="button" value="Remover">
-              </div>   
-      </div>
+                    <i class="fa fa-solid fa-trash btn-remove"></i>
+                    <!-- <input data-produto-id="${produto.id}" class="btn btn-danger btn-sm btn-remove" type="button" value="Remover"> -->
+                </div>
+    </div>
   `;
 }
 
@@ -166,7 +178,7 @@ document.body.addEventListener("click", function(event) {
         store.dispatch(removeItem(produtoId))
     }
 });
-//document.querySelector(".lista_produtos").innerHTML = renderizaTodosProdutos();
+document.querySelector(".lista_produtos").innerHTML = renderizaTodosProdutos();
 
-//renderizaTodosProdutos();
-//carrinhoValorTotal()
+renderizaTodosProdutos();
+carrinhoValorTotal()
